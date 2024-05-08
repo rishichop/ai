@@ -54,3 +54,5 @@ for i in (small_convo, math_convo_1, math_convo_2):
 # using the ChatterBotCorpusTrainer class
 corpus_trainee = ChatterBotCorpusTrainer(myBot)
 corpus_trainee.train('chatterbot.corpus.english')
+
+##
