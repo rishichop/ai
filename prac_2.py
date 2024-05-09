@@ -98,8 +98,21 @@ target_node = PuzzleState(target_state)
 
 path = a_star(start_node, target_state)
 if path:
+    m = ""
+    
     for i, (state, move) in enumerate(path):
-        print(f"Step {i + 1}: Move {move} =>")
+        if move:
+            
+            if move[0] == 1:
+                m = "down"
+            elif move[0] == -1:
+                m = "up"
+            elif move[1] == 1:
+                m = "right"
+            elif move[1] == -1:
+                m = "left"
+             
+        print(f"Step {i + 1}: Move {m} =>")
         for row in state:
             print(row)
         print()

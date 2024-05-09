@@ -17,7 +17,7 @@ class Graph:
     def dfs_util(self, v, visited):
         visited.add(v)
         print(v, end=' ')
-        for neighbor in self.graph[v]:
+        for neighbor in self.graph[v]:  # Reversed(self.graph[v]) if want the traversal from right to left
             if neighbor not in visited:
                 self.dfs_util(neighbor, visited)
     
@@ -27,12 +27,12 @@ class Graph:
 
 # Test the DFS algorithm
 g = Graph()
-g.add_edge(0, 1)
-g.add_edge(0, 2)
+g.add_edge(1, 2)
 g.add_edge(1, 3)
-g.add_edge(2, 3)
-g.add_edge(2, 4)
-g.add_edge(3, 5)
-g.add_edge(4, 5)
+g.add_edge(1, 4)
+g.add_edge(2, 5)
+g.add_edge(2, 6)
+g.add_edge(3, 7)
+g.add_edge(5, 8)
 print("Depth First Traversal (DFS):")
-g.dfs(3)
+g.dfs(1)
